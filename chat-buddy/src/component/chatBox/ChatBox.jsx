@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./ChatBox.module.css";
+import { userContext } from "../../context/UserContext";
 
 const ChatBox = () => {
+  const { client } = useContext(userContext);
+
   return (
     <>
       <div className={styles.ChatBoxDiv}>
         <div className={styles.ChatBoxHead}>
           <div className={styles.user}>
             <div className={styles.avatar}>
-              <img src="/chatBuddy/avatar2.png" alt="" />
+              <img
+                src={client?.avatar || "/chatBuddy/default_avatar.png"}
+                alt=""
+              />
             </div>
-            <p>name</p>
+            <p>{client?.name || "name"}</p>
           </div>
           <div className={styles.call_search}>
             <div className={styles.call}>
@@ -22,6 +28,7 @@ const ChatBox = () => {
         </div>
 
         <div className={styles.ChatBoxBody}>
+          <span id="bg-logo" className="bi bi-chat-dots"></span>
           <div className={styles.Chats}>
             <div className={styles.chat1stPerson}>
               <div className={styles.mssgDiv}>
@@ -30,11 +37,14 @@ const ChatBox = () => {
                   elit. Quidem quas sapiente voluptate quaerat voluptatem,
                   minus, numquam commodi magni totam corrupti veritatis aliquam?
                   Corporis ullam repellat eveniet necessitatibus exercitationem
-                  explicabo tenetur!
+                  explicabo tenetur!Lorem Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Labore molestiae similique veritatis
+                  accusamus itaque delectus nam est sequi, aspernatur corrupti
+                  ea quas atque saepe, expedita doloribus consequuntur? Expedita
+                  <span className={styles.time}>
+                    00:00 am <i className="bi bi-check"></i>
+                  </span>
                 </p>
-                <span className={styles.time}>
-                  00:00 am <i className="bi bi-check"></i>
-                </span>
               </div>
             </div>
             <div className={styles.chat1stPerson}>

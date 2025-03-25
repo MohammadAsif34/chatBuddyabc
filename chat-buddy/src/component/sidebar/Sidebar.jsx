@@ -1,9 +1,12 @@
+import { userContext } from "../../context/UserContext";
 import Setting from "../setting/Setting";
 import styles from "./Sidebar.module.css";
-import React, { useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 
 const Sidebar = () => {
   const [isActiveSetting, SetIsActiveSetting] = useState(false);
+  const [opt, SetOpt] = useState("");
+  const { userRef } = useContext(userContext);
   const handleNavigation = () => {
     alert("navigation clicked");
   };
@@ -40,7 +43,12 @@ const Sidebar = () => {
             <li>
               <span className="bi bi-archive" title="Archive"></span>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                SetIsActiveSetting(!isActiveSetting);
+                SetOpt("General");
+              }}
+            >
               <span className="bi bi-gear" title="Setting"></span>
             </li>
           </ul>
@@ -48,11 +56,17 @@ const Sidebar = () => {
           <div
             className={styles.avatar}
             title="Profile"
-            onClick={() => SetIsActiveSetting(!isActiveSetting)}
+            onClick={() => {
+              SetIsActiveSetting(!isActiveSetting);
+              SetOpt("Profile");
+            }}
           >
-            <img src="/chatBuddy/avatar1.png" alt="" />
+            <img
+              src={userRef.current?.avatar || "/chatBuddy/avatar1.png"}
+              alt=""
+            />
           </div>
-          {isActiveSetting && <Setting />}
+          {isActiveSetting && <Setting title={opt} />}
         </div>
       </div>
     </>

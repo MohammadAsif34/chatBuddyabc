@@ -33,6 +33,7 @@
     overflow: hidden;
     background-color: gray;
     cursor: pointer;
+    z-index: 30;
     img {
       width: 100%;
       height: 100%;

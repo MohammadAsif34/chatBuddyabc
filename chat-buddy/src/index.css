@@ -20,3 +20,13 @@
 .color-read {
   color: #17ce92;
 }
+#bg-logo {
+  color: #17ce92;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  z-index: 20;
+  opacity: 0.3;
+}

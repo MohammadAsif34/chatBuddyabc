@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
 import styles from "./ChatProfiles.module.css";
-import Profile from "../profile/Profile";
+import Profile from "../profile/User";
+import { userContext } from "../../context/UserContext";
 
 const ChatProfiles = () => {
+  const [users, setUSers] = useState([]);
+  const { setClient, user } = useContext(userContext);
+  const url = `http://localhost:3000/api/user/users`;
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((response) => {
+        setUSers(response.data);
+        console.log(response.data);
+      })
+      .catch((err) => console.log(err));
+  }, [url]);
   return (
     <>
       <div className={styles.ChatProfilesDiv}>
@@ -22,11 +36,11 @@ const ChatProfiles = () => {
           </div>
         </div>
         <div className={styles.ChatProfileList}>
-          {[1, 2, 3, 4, 5].map((item, index) => (
+          {user?.contacts?.map((item, index) => (
             <>
-              <Profile />
-              <Profile />
-              <Profile />
+              <div onClick={() => setClient(item)} key={index}>
+                <Profile item={item} />
+              </div>
             </>
           ))}
         </div>
