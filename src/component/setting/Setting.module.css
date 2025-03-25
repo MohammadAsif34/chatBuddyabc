@@ -1,0 +1,85 @@
+.SettingContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.SettingDiv {
+  margin: 0 0 5px 50px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 600px;
+  height: 500px;
+  border-radius: 8px;
+  background-color: #ffff;
+  box-shadow: 0 1px 5px #17ec92;
+  display: flex;
+  z-index: 10;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.SettingDiv.visible {
+  opacity: 1;
+}
+.SettingSidebar {
+  width: 50%;
+  height: 100%;
+  padding: 5px;
+  color: black;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px 0 0 8px;
+  background-color: rgb(234, 234, 234);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  ul {
+    padding: 5px;
+    list-style: none;
+    li.active {
+      border: 1px solid black;
+    }
+    li {
+      padding: 5px 2px;
+      text-transform: capitalize;
+      &:hover {
+        background-color: rgb(244, 244, 244);
+        border-radius: 4px;
+      }
+      &.active {
+        background-color: lime;
+      }
+
+      i {
+        padding: 0 4px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.SettingSidebar > span {
+  padding: 5px 5px;
+  i {
+    padding: 0 4px;
+    margin-right: 5px;
+  }
+}
+.SettingSidebar > span:hover {
+  background-color: gray;
+  border-radius: 4px;
+}
+
+.settingContent {
+  color: black;
+  width: 100%;
+  height: 100%;
+  padding: 20px 25px;
+}
+.active {
+  border: 1px solid black;
+}

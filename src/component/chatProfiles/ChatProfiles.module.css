@@ -1,0 +1,61 @@
+.ChatProfilesDiv {
+  width: 400px;
+  height: calc(100vh - 50px);
+  background-color: #ffffff;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 6px 0 0 0;
+}
+
+.ChatProfilesHead {
+  padding: 10px 15px;
+  .filterDiv {
+    padding: 10px 0;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    .filterDivIcons {
+      span {
+        margin-left: 15px;
+      }
+    }
+  }
+  .filterDiv span {
+    padding: 8px 10px;
+  }
+  .filterDiv span:hover {
+    background-color: #17ec92;
+    border-radius: 4px;
+  }
+}
+.searchDiv {
+  width: 100%;
+  height: 35px;
+  padding-left: 10px;
+  font-size: 12px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: gray;
+  input {
+    width: 100%;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 200;
+    color: rgb(156, 156, 156);
+    border: none;
+    outline: none;
+  }
+}
+.ChatProfileList {
+  width: 100%;
+  height: calc(100% - 70px - 40px);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
