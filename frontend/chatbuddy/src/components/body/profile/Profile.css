@@ -1,0 +1,67 @@
+.clientProfile {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: burlywood;
+  .clientProfileHeader {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.clientProfileAvatar {
+  margin: auto;
+  width: 50%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.clientProfileOption {
+  margin: 10px 0;
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    li {
+      text-align: center;
+      span {
+        padding: 4px 8px;
+        background-color: lightgray;
+        border-radius: 8px;
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+.clientProfileDetails {
+  label {
+    display: block;
+    margin-top: 10px;
+    color: gray;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+.clientProfileFiles {
+  margin-top: 20px;
+  p {
+    span {
+      float: right;
+    }
+  }
+  .files {
+    width: 100%;
+    height: 150px;
+    padding: 5px;
+    background-color: rgba(128, 128, 128, 0.267);
+    border-radius: 8px;
+  }
+}

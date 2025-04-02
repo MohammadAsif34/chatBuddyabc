@@ -1,0 +1,18 @@
+.chatBoxMssg {
+  width: 100%;
+  height: calc(100vh - 280px);
+  padding: 10px 10px;
+  background-color: rgba(128, 128, 128, 0.3);
+  overflow: auto;
+}
+.chatBoxMssg::-webkit-scrollbar {
+  width: 4px;
+}
+.chatBoxMssg::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+@media screen and (max-width: 600px) {
+  .chatBoxMssg {
+    height: calc(100vh - 260px);
+  }
+}
