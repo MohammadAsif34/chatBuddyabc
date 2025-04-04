@@ -1,15 +1,18 @@
 import React, { useContext } from "react";
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from "../context/AppContext";
 
 const SidebarSection = () => {
   const { activeState, setActiveState } = useContext(AppContext);
+  const { isMobile } = useContext(AppContext);
   return (
-    <div className="w-full  h-full  flex flex-col  justify-between">
-      <div className="">
-        <div className="w-full aspect-square flex justify-center items-center text-3xl">
-          <span className=" bi bi-gitlab"></span>
-        </div>
-        <ul className="flex flex-col  gap-3 py-3 text-gray-800">
+    <div className="w-full h-full max-sm:px-3 flex flex-col max-sm:flex-row justify-between">
+      <div className=" ">
+        {!isMobile && (
+          <div className="w-full aspect-square flex justify-center items-center text-3xl">
+            <span className=" bi bi-gitlab"></span>
+          </div>
+        )}
+        <ul className="sm:py-3 flex flex-col max-sm:flex-row  gap-3 max-sm:gap-x-6 text-gray-800 ">
           <li className=" flex items-center justify-center text-2xl ">
             <span
               onClick={() => setActiveState("profile")}
@@ -47,13 +50,15 @@ const SidebarSection = () => {
           </li>
         </ul>
       </div>
-      <div className=" flex flex-col  items-center">
-        <div className="my-2 flex items-center justify-center text-2xl ">
-          <span className="bi bi-moon px-3 py-2 rounded-full hover:bg-gray-100  cursor-pointer"></span>
-        </div>
-        <div className="w-4/5 my-4 aspect-square border rounded-full cursor-pointer overflow-hidden">
+      <div className="w-full h-fit flex flex-col items-center">
+        {!isMobile && (
+          <div className="my-2 flex items-center justify-center text-2xl ">
+            <span className="bi bi-moon px-3 py-2 rounded-full hover:bg-gray-100  cursor-pointer"></span>
+          </div>
+        )}
+        <div className="w-[50px] h-[50px] aspect-square border rounded-full cursor-pointer overflow-hidden">
           <img
-            className="w-full h-full object-cover"
+            className="w- h-full object-cover"
             src="/default_avatar.png"
             alt=""
           />

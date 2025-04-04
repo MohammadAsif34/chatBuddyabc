@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ChatSend = () => {
+  const [message, setMessage] = useState("");
+  const handleSend = () => {
+    if (message.trim() === "") return alert("please enter message");
+    setMessage("");
+    alert(message);
+  };
   return (
-    <div className="w-full h-full border-t px-5 py-2 border-gray-300 flex items-center gap-3">
+    <div className="w-full h-full border-t px-2 sm:px-5 py-2 border-gray-300 flex items-center sm:gap-3">
       <div className="">
         <span className="bi bi-three-dots text-xl px-2 py-1 rounded-md hover:bg-gray-200"></span>
       </div>
@@ -14,12 +20,15 @@ const ChatSend = () => {
           type="text"
           className="w-full h-full px-2 outline-0"
           placeholder="Text here"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSend()}
         />
       </div>
       <div>
         <span className="bi bi-mic text-xl px-2 py-1 rounded-md hover:bg-gray-200"></span>
       </div>
-      <div>
+      <div onClick={() => handleSend()}>
         <span className="bi bi-send text-xl px-3 py-2 rounded-md bg-gray-300"></span>
       </div>
     </div>

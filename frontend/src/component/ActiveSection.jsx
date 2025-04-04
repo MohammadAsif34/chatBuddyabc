@@ -1,5 +1,5 @@
 import React, { lazy, useContext } from "react";
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from "../context/AppContext";
 const ContactSection = lazy(() => import("./ContactSection"));
 const MyProfile = lazy(() => import("./myProfile/MyProfile"));
 const Setting = lazy(() => import("./setting/Setting"));

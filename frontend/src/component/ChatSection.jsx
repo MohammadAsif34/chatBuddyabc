@@ -5,11 +5,11 @@ import ChatSend from "./chatSection/ChatSend";
 
 const ChatSection = () => {
   return (
-    <div className="w-full h-full flex flex-col ">
+    <div className="w-full max-sm:h-[calc(100%-80px)] h-full ">
       <div className="w-full h-20 ">
         <ChatProfile />
       </div>
-      <div className="flex-1 overflow-y-scroll ">
+      <div className="h-[calc(100%-136px)] overflow-y-scroll ">
         <ChatBox />
       </div>
       <div className="w-full h-14 ">

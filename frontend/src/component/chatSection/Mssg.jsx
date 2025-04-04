@@ -6,7 +6,7 @@ const Mssg = ({ type }) => {
       className={`w-full my-3  flex  ${type === "first" ? "justify-end" : ""}`}
     >
       <div
-        className={`max-w-3/5 border border-gray-300 rounded-md px-2 py-1 ${
+        className={`max-w-3/5 max-sm:max-w-4/5 border border-gray-300 rounded-md px-2 py-1 ${
           type === "first" ? "bg-[#34f7c4] text-gray-500" : "text-gray-500"
         } `}
       >
@@ -14,7 +14,11 @@ const Mssg = ({ type }) => {
         elit. Neque perspiciatis impedit repellendus nulla id delectus? Itaque
         repellendus nulla pariatur neque nisi consequuntur accusamus officiis
         aperiam, iure dolores tenetur quam ullam!
-        <p className="text-[12px] float-end">
+        <p
+          className={`text-[11px] mt-2 text-green-500 float-end ${
+            type === "first" ? "text-blqck" : "text-black"
+          }`}
+        >
           2:208 <span className="bi bi-check2-circle"></span>
         </p>
       </div>
